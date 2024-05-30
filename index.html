@@ -218,6 +218,12 @@
 			Module.setStatus('Downloading...');
 			window.onerror = function () {
 				Module.setStatus('Exception thrown, see JavaScript console');
+				const para = document.createElement("p");
+const node = document.createTextNode("This is new.");
+para.appendChild(node);
+
+const element = document.getElementById("div1");
+element.appendChild(para);
 				spinnerElement.style.display = 'none';
 				Module.setStatus = function (text) {
 					if (text) Module.printErr('[post-exception status] ' + text);
